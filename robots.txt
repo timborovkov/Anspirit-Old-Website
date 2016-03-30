@@ -1,0 +1,21 @@
+User-agent: *
+
+Disallow: /php/
+Disallow: /js/
+Disallow: /css/
+Disallow: /Anspirit_files/
+Disallow: /admin/
+Disallow: /php/
+Disallow: /sitecake/
+Disallow: /.gitignore
+Disallow: /new/
+Disallow: /old/
+<<<<<<< HEAD
+=======
+Disallow: /assets/
+Disallow: /ii
+Disallow: /images/pic01.png
+Disallow: /images/pic02.png
+Disallow: /images/pic03.png
+Disallow: /images/pic04.png
+>>>>>>> 599b4da... a

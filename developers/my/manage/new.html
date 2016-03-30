@@ -1,0 +1,151 @@
+<html>
+ <head>
+   <style>
+     .newExtTable{
+       background-color: rgba(189, 189, 189, 0.1);
+       border-radius: 10px;
+       width: 700px;
+     }
+     input{
+       margin-top: 5px;
+     }
+     .field{
+       margin-left: -5px;
+       width: 100%;
+       height: 20px;
+       font-size: 15px;
+       border-radius: 0px;
+       background: #f4f4f4;
+       color: rgb(40, 40, 40);
+     }
+     textarea{
+       background: #f4f4f4;
+       color: rgb(40, 40, 40);
+       font-size: 15px;
+       margin-left: -5px;
+       width: 100%;
+     }
+     .submit{
+       height: 30px;
+       font-size: 20px;
+       border-radius: 0px;
+       background-color: rgba(0, 133, 255, 0.7);
+       color: rgb(40, 40, 40);
+       width: 200px;
+       margin-left: calc(50% - 100px);
+     }
+   </style>
+   <script type="text/javascript">
+    $("document").ready(function(){
+      $(".devPassword").val(getCookie("password"));
+      $(".devId").val(getCookie("id"));
+
+      $('.newExtForm').ajaxForm({
+          beforeSubmit: validate
+      });
+
+      function validate(formData, jqForm, options) {
+        var name = $('textarea[name=name]').fieldValue();
+        var price = $('input[name=price]').fieldValue();
+        var pathToExt = $('input[name=pathToExt]').fieldValue();
+        var description = $('input[name=description]').fieldValue();
+        var icon = $('input[name=icon]').fieldValue();
+
+          if (!name[0]) {
+              alert('Please enter a value for name');
+              return false;
+          }
+          if (!price[0]) {
+              alert('Please enter a value for price');
+              return false;
+          }
+          if (!pathToExt[0]) {
+              alert('Please enter a value for path to extension');
+              return false;
+          }
+          if (!description[0]) {
+              alert('Please enter a value for description');
+              return false;
+          }
+          if (!pathToExt[0]) {
+              alert('Please enter a value for path to icon');
+              return false;
+          }
+          else {
+            var name = $('textarea[name=name]').val('');
+            var price = $('input[name=price]').val('');
+            var pathToExt = $('input[name=pathToExt]').val('');
+            var description = $('input[name=description]').val('');
+            var icon = $('input[name=icon]').val('');
+          }
+      }
+    });
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0; i<ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1);
+            if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+        }
+        return "";
+    }
+   </script>
+ </head>
+ <body>
+   <h1>New Extensions</h1>
+   <form class="newExtForm" action="http://anspirit.org/php/newExtension.php" method="post">
+   <table align="center" class="newExtTable">
+    <tr>
+      <td>
+        Name:
+      </td>
+      <td>
+        <input type="text" name="name" placeholder="MyExtension" class="field">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Price($0 - ...):
+      </td>
+      <td>
+        <input type="number" name="price" placeholder="0" class="field">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Description:
+      </td>
+      <td>
+        <textarea name="description" rows="8"></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Path to hosted folder:
+      </td>
+      <td>
+        <input type="text" name="pathToExt" placeholder="http://example.com/myExtension/" class="field">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Path to hosted icon:
+      </td>
+      <td>
+        <input type="text" name="icon" placeholder="http://example.com/myExtensionIcon.png" class="field">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="submit" name="submit" value="Create" class="submit">
+      </td>
+    </tr>
+   </table>
+   <!-- Hidden inputs -->
+   <input type="hidden" class="devId" name="devId">
+   <input type="hidden" class="devPassword" name="devPassword">
+   <!-- Hidden inputs end -->
+  </form>
+ </body>
+ </html>
