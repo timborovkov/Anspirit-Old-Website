@@ -141,7 +141,7 @@ footer{
     </form>
 </div>
 <footer>
-  <a href="http://anspirit.org"><img src="../../images/anspirit.ico" width="100px"/></a>
+  <a href="http://anspirit.org"><img src="../../images/anspirit.png" width="100px"/></a>
 </footer>
 </body>
 

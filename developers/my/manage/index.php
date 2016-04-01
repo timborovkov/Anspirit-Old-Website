@@ -39,7 +39,7 @@
     <link rel="apple-touch-icon" href="../../../images/anspirit.ico">
     <title>Anspirit - Developer login</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="http://malsup.github.com/jquery.form.js"></script> 
+    <script src="http://malsup.github.com/jquery.form.js"></script>
     <style media="screen">
     .main{
         background: url('http://i.imgur.com/Eor57Ae.jpg') no-repeat fixed center center;
@@ -120,7 +120,7 @@
 
     </div>
     <footer>
-      <a href="http://anspirit.org"><img src="../../../images/anspirit.ico" width="100px"/></a>
+      <a href="http://anspirit.org"><img src="../../../images/anspirit.png" width="100px"/></a>
     </footer>
   </body>
 </html>
