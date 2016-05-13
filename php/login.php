@@ -1,4 +1,5 @@
 <?php
+  header('Access-Control-Allow-Origin: *');  
   header("Content-Type: text/javascript");
 
   if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
